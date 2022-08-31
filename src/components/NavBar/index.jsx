@@ -8,10 +8,10 @@ const NavBar = () => {
         <>
     <header>
         <nav className='cont_nav'>
-            <div className='cont_logo'>
-                <img className ='logo_sp'src={logoSP} />
-            </div>
             <ul className='cont_ul'>
+            <div className='cont_logo'>
+                <img className ='logo_sp' src={logoSP}/>
+            </div>
                 <li><a href="/">Inicio</a></li>
                 <li><a href="/">Hombre</a></li>
                 <li><a href="/">Mujer</a></li>
