@@ -8,8 +8,12 @@ function App() {
       <NavBar/>
       <div className="App">
       </div>
+
+      <ItemListContainer greeting={"HASTA 12 CUOTAS SIN INTERES"}/>
+
+
+
     </>
-    
   );
 }
 
