@@ -11,31 +11,10 @@
     justify-content: center;
     padding: 1rem;
     background-color: #BFBFBF;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top: black 1px solid;
 }
 
 button{
     padding: 5px;
     margin: 10px;
-}
-
-.img1{
-    width: 220px;
-    height: 150px;
-    padding: 0;
-    margin: 0px;
-}
-.card-1{
-    justify-content: center;
-    width: 300px;
-    background-color: white;
-    border-radius: 10px;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-}
-.cont-img{
-    display: flex;
-    justify-content: center;
 }

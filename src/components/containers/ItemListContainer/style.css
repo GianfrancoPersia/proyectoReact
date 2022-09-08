@@ -6,3 +6,14 @@
     border-top: solid 2px cyan;
     border-bottom: solid 2px cyan;
 }
+
+.card-1{
+    justify-content: center;
+    width: 300px;
+    background-color: white;
+    margin:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
