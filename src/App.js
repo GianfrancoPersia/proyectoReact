@@ -1,6 +1,7 @@
 // >import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/containers/ItemListContainer';
+import ItemDetailContainer from './components/containers/ItemListContainer/ItemDetailContainer';
 // import {
 //   BrowserRouter,
 //   Routes,
@@ -13,6 +14,7 @@ function App() {
     <NavBar/>
     <div className="App"></div>
     <ItemListContainer greeting={"HASTA 12 CUOTAS SIN INTERES"}/>
+    <ItemDetailContainer/>
       {/* <BrowserRouter> */}
         {/* <Routes>
           <Route path="/" element={<ItemListContainer/>}/>
