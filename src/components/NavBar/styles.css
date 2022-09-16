@@ -43,3 +43,11 @@ a{
     display: flex;
     background-color: white;
 }
+.cuotas{
+    text-align: center;
+    background-color: #BFBFBF ;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    border-top: solid 2px cyan;
+    border-bottom: solid 2px cyan;
+}

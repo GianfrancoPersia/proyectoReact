@@ -35,11 +35,12 @@ const ItemListContainer = ({greeting}) => {
     
     return (
         <div className='item-list-container'>
-            <h3 className='cuotas'>{greeting}</h3>
-        <div className='card-1'>
-            <ItemList products={productos}/>
-            <ItemCount initial={1} stock={10} onAdd={agregarAlCarrito}/>
-        </div>
+            <div className='cont'>
+                <div className='card-1'>
+                    <ItemList products={productos}/>
+                    <ItemCount initial={1} stock={10} onAdd={agregarAlCarrito}/>
+                </div>
+            </div>
         </div>
     )
 }

@@ -5,7 +5,7 @@
     margin: 0px;
 }
 
-.cont-img{
+.cont-card{
     display: flex;
     justify-content: center;
     flex-direction: column;
