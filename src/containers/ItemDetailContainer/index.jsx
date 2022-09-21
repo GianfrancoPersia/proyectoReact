@@ -1,5 +1,5 @@
 import React,{ useEffect,useState } from 'react'
-import ItemDetail from "../../../../components/ItemDetail";
+import ItemDetail from "../../components/ItemDetail";
 import {useParams} from 'react-router-dom';
 const ItemDetailContainer = () => {
     const [productDetail, setProductDetail] = useState({})

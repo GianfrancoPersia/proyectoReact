@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import './style.css';
+
 const ItemCount = ({stock,initial,onAdd}) => {
 
     const [count,setCount]=useState(initial);

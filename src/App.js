@@ -1,7 +1,7 @@
 import  './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/containers/ItemListContainer';
-import ItemDetailContainer from './components/containers/ItemListContainer/ItemDetailContainer';
+import ItemListContainer from './containers/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer';
 import {
   BrowserRouter,
   Routes,
