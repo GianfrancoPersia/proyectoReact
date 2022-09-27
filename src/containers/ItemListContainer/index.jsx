@@ -57,14 +57,15 @@ const ItemListContainer = ({ greeting }) => {
         (async () => {
             try {
                 if (categoryId){
-                    const response = await fetch( `https://fakestoreapi.com/products/ `+ categoryId);
-                    const productos = await response.json();
-                    setProductos(productos);
+                    const response = await fetch( `https://fakestoreapi.com/products/category/`+ categoryId);
+                    const products = await response.json();
+                    setProductos(products);
                 }
                 else {
                     const response = await fetch(`https://fakestoreapi.com/products/ `);
-                    const productos = await response.json();
-                    setProductos(productos);
+                    const products = await response.json();
+                    setProductos(products);
+
                 }
             } catch (error) {
                 console.log(error);
