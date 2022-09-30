@@ -1,79 +1,51 @@
 import React, { useEffect, useState } from 'react';
 import {useParams} from 'react-router-dom';
-// import ItemCount from '../ItemCount';
-import {products} from '../../data/products';
 import ItemList from '../../components/ItemList';
+import { db } from '../../firebase/config';
+import { collection, query, where, getDocs } from "firebase/firestore";
 import './style.css'
 
-// const ItemListContainer = ({greeting}) => {
-//     const [productos, setProductos] = useState([])
-//     //IIFFE
 
-//     useEffect(()=> {
-//     (async ()=> {
-//         const obtenerProductos = new Promise ((accept, reject)=> {
-//             setTimeout(()=> {
-//                 accept(products)
-//             },);
-//         })
-    
-//             try {
-//                 const productos = await obtenerProductos;
-//                 setProductos(productos);
-//             } catch (error) {
-//                 console.log(error);
-//             }
-    
-//             })()
-    
-//         }, [])
-    
-//     console.log(productos)
-
-//     const agregarAlCarrito = (cantidad) => {
-//         console.log(cantidad)
-//         console.log(`Cantidad seleccionada ${cantidad}`);
-//     }
-    
-//     return (
-//         <div className='item-list-container'>
-//             <div className='cont'>
-//                 <div className='card-1'>
-//                     <ItemList products={productos}/>
-//                     <ItemCount initial={1} stock={10} onAdd={agregarAlCarrito}/>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
 
 const ItemListContainer = ({ greeting }) => {
+
+    console.log(db);
+
     const [productos, setProductos] = useState([]);
 
     const {categoryId} = useParams();
 
     console.log(categoryId);
+    
+
     useEffect(() => {
         (async () => {
             try {
-                if (categoryId){
-                    const response = await fetch( `https://fakestoreapi.com/products/category/`+ categoryId);
-                    const products = await response.json();
-                    setProductos(products);
-                }
-                else {
-                    const response = await fetch(`https://fakestoreapi.com/products/ `);
-                    const products = await response.json();
-                    setProductos(products);
 
-                }
+const q =  categoryId ? 
+query(collection(db, "products"), where("category", "==", categoryId)):
+query(collection(db, "products"));
+const productosFirebase = [];
+const querySnapshot = await getDocs(q);
+
+querySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+    console.log(doc.id, " => ", doc.data());
+    productosFirebase.push({id: doc.id, ...doc.data()}) 
+});
+
+    console.log(productosFirebase);
+
+    setProductos(productosFirebase)
+
+
             } catch (error) {
                 console.log(error);
             }
         })();
-    }, [categoryId]);
+    }, [categoryId]); 
 
     return <ItemList products={productos} />;
 };
 
-export default ItemListContainer
+export default ItemListContainer;
