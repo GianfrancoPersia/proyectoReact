@@ -4,14 +4,19 @@ import { db } from "../firebase/config"
 const guardarOrden = (cart, orden) => {
     console.log("Guardar orden");
     
+
     const batch = writeBatch(db)
     
+
     const outOfStock = []
     
+
     cart.forEach((productoEnCart) => {
         getDoc(doc(db, 'products', productoEnCart.id))
         .then(async (documentSnapshot) => {
+
             const producto = {...documentSnapshot.data(), id: documentSnapshot.id};
+
 
             if (producto.stock >= productoEnCart.quantity) {
                 batch.update(doc(db, 'products', producto.id) ,{
@@ -33,6 +38,7 @@ const guardarOrden = (cart, orden) => {
                 }).catch((err) => {
                     console.log(`Error: ${err.message}`);
                 })
+
             } else {
                 let mensaje = ''
                 for (const producto of outOfStock) {

@@ -1,26 +1,37 @@
 .img{
     width: 220px;
-    height: 150px;
-    padding: 0;
-    margin: 0px;
+    height: 220px;
+    padding: 20px 10px 20px 10px;
+    margin: 10px;
 }
 
 .cont-card{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    width: 300px;
 }
 .card-name{
     text-align: center;
     padding: 10px;
     background-color: cyan;
     width: 100%;
-    border-bottom: #BFBFBF 1px solid ;
 }
 .card-desc{
     padding: 10px;
 }
 .card-price{
-    font-size: 25px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 5px;
+    background-color: #16808C;
+    width: 100%;
+    text-align: center;
 }
+
+.card-price:hover{
+    padding: 10px;
+}
+
+

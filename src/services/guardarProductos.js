@@ -1,12 +1,15 @@
+
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../firebase/config";
 
 const algoritmoGuardadoAutomático = async () => {
 
     try {
+
         const response = await fetch('/mocks/data.json');
         const productosAGuardar = await response.json();
     
+
         productosAGuardar.forEach(async (producto) => {
             const docRef = await addDoc(collection(db, "products"), {
                 title: producto.title,

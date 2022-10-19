@@ -1,7 +1,7 @@
 import React from 'react';
 import CartWidget from '../CartWidget';
 import './styles.css';
-import logoSP from '../../img/spsneakers.png';
+import logoSP from '../../img/logo.png';
 import {Link} from 'react-router-dom';
 
 const NavBar = () => {
@@ -13,7 +13,7 @@ const NavBar = () => {
                     <img className ='logo_sp' src={logoSP} alt='logotipo'/>
                 </div>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Inicio</Link>
                 </li>
                 <li>
                     <Link to="/category/men's clothing">Hombre</Link>
@@ -21,12 +21,9 @@ const NavBar = () => {
                 <li>
                     <Link to="/category/women's clothing">Mujer</Link>
                 </li>
-                <li>
-                    {/* <Link to="/category/contacto">Contacto</Link> */}
-                </li>
                 <CartWidget/>
             </ul>
-            <h3 className='cuotas'>HASTA 12 CUOTAS SIN INTERES</h3>
+            <h3 className='cuotas'>¡¡¡ HASTA 6 CUOTAS SIN INTERES !!!</h3>
         </nav>
     </>
     )
